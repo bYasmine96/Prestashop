@@ -533,6 +533,18 @@ class CustomerCore extends ObjectModel
 		WHERE co.`ip_address` = \''.ip2long(trim($ip)).'\'');
 	}
 
+	/*Search by phone number*/
+	public static function searchByPhoneNumber($phonenumber)
+	{
+		return Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS('
+		SELECT DISTINCT c.*
+		FROM `'._DB_PREFIX_.'customer` c
+		LEFT JOIN `'._DB_PREFIX_.'guest` g ON g.id_customer = c.id_customer
+		LEFT JOIN `'._DB_PREFIX_.'connections` co ON g.id_guest = co.id_guest
+		WHERE co.`phonemobile` = \''.ip2long(trim($phonenumber)).'\'');
+	}
+
+
 	/**
 	 * Return several useful statistics about customer
 	 *

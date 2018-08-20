@@ -41,6 +41,7 @@ Context::getContext()->smarty->assign(array(
 	'display_header' => true,
 	'display_footer' => true,
 ));
+
 $dir = Context::getContext()->smarty->getTemplateDir(0).'controllers'.DIRECTORY_SEPARATOR.trim($con->override_folder, '\\/').DIRECTORY_SEPARATOR;
 $header_tpl = file_exists($dir.'header.tpl') ? $dir.'header.tpl' : 'header.tpl';
 $tool_tpl = file_exists($dir.'page_header_toolbar.tpl') ? $dir.'page_header_toolbar.tpl' : 'page_header_toolbar.tpl';

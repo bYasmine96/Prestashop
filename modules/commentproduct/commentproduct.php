@@ -31,11 +31,20 @@ class commentproduct extends Module
 	public function processConfiguration(){
 		if(Tools::isSubmit('submit_mymodcomments_form'))// Vérification que le formulaire  a bien été envoyé
 		{
-			$enable_grades=Tools::getValue('enable_grades')
-			$enable_comments=Tools::getValue('enable_comments')
-			Configuration::updateValue('GRADES','$enable_grades')
-			Configuration::updateValue('COMMENTS','$enable_comments')
+			$enable_grades=Tools::getValue('enable_grades');
+			$enable_comments=Tools::getValue('enable_comments');
+			Configuration::updateValue('GRADES','$enable_grades');
+			Configuration::updateValue('COMMENTS','$enable_comments');
+			$this->context->smarty->assign('confirmation','ok');
 		}
 
 	}
+
+	public function install(){//Enregistrement du hook pour qu'il soit utilisable
+		parent::install();
+		$this->registerHook('hookDisplayProductTabContent');// Elle a besoin d'un ID du module
+		return true;
+	}
+
+	public function hookDisplayProductTabContent()
 }

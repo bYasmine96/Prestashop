@@ -120,7 +120,20 @@ class AdminSearchControllerCore extends AdminController
 						$this->errors[] = Tools::displayError('No order was found with this ID:').' '.Tools::htmlentitiesUTF8($this->query);
 				}
 			}
+			if (!$searchType || $searchType == 8){
+				if($searchType == 8){
+					echo '<script>alert("thnks");</script>';
+					Tools::redirectAdmin('index.php?tab=AdminOrders&id_order='.(int)$order->id.'&vieworder'.'&token='.Tools::getAdminTokenLite('AdminOrders'));
+					$this->searchPhoneNumber();
 
+				}
+				else{
+					echo '<script>alert("thnks");</script>';
+
+				}
+				
+				
+			}
 			/* Invoices */
 			if ($searchType == 4)
 			{
@@ -153,7 +166,20 @@ class AdminSearchControllerCore extends AdminController
 		$this->display = 'view';
 	}
 
+	/* Search by phone number */
+	public function searchPhoneNumber()
+	{
+		if (!ip2long(trim($this->query)))
+		{
+			$this->errors[] = Tools::displayError('This is not a valid phone number:').' '.Tools::htmlentitiesUTF8($this->query);
+			return;
+		}
+		$this->_list['customers'] = Customer::searchByPhoneNumber($this->query);
+	}
 
+
+
+	/* Search By IP */
 	public function searchIP()
 	{
 		if (!ip2long(trim($this->query)))

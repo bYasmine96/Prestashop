@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2018-08-12 13:11:17
+<?php /* Smarty version Smarty-3.1.14, created on 2018-08-19 12:45:51
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\modules\prestashop\modules\dashgoals\views\templates\hook\dashboard_zone_two.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:75075b7015d5427c52-95052953%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '145abbf4d086e8e0f57590311cbae55f819fe8a6' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC9\\modules\\prestashop\\modules\\dashgoals\\views\\templates\\hook\\dashboard_zone_two.tpl',
-      1 => 1395073066,
+      1 => 1534343831,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5b7015d55407c2_85327830',
   'variables' => 
   array (
     'currency' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'colors' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5b7015d55407c2_85327830',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5b7015d55407c2_85327830')) {function content_5b7015d55407c2_85327830($_smarty_tpl) {?>
 <div class="clearfix"></div>
@@ -45,7 +45,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <section id="dashgoals" class="panel widget">
 	<header class="panel-heading">
 		<i class="icon-bar-chart"></i>
-		<?php echo smartyTranslate(array('s'=>'Your forecast','mod'=>'dashgoals'),$_smarty_tpl);?>
+		<?php echo smartyTranslate(array('s'=>'Forecast','mod'=>'dashgoals'),$_smarty_tpl);?>
 
 		<span id="dashgoals_title" class="badge"><?php echo $_smarty_tpl->tpl_vars['goals_year']->value;?>
 </span>
@@ -55,10 +55,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</span>
 		
 		<span class="panel-heading-action">
-			<a class="list-toolbar-btn" href="javascript:void(0);" onclick="toggleDashConfig('dashgoals');" title="configure">
+			<a class="list-toolbar-btn" href="javascript:void(0);" onclick="toggleDashConfig('dashgoals');" title="<?php echo smartyTranslate(array('s'=>'Configure','mod'=>'dashtrends'),$_smarty_tpl);?>
+">
 				<i class="process-icon-configure"></i>
 			</a>
-			<a class="list-toolbar-btn" href="javascript:void(0);" onclick="refreshDashboard('dashgoals');" title="refresh">
+			<a class="list-toolbar-btn" href="javascript:void(0);" onclick="refreshDashboard('dashgoals');" title="<?php echo smartyTranslate(array('s'=>'Refresh','mod'=>'dashtrends'),$_smarty_tpl);?>
+">
 				<i class="process-icon-refresh"></i>
 			</a>
 		</span>
@@ -68,22 +70,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<section class="loading">
 		<div class="btn-group" data-toggle="buttons">
 			<label class="btn btn-default">
-				<input type="radio" name="options" onchange="selectDashgoalsChart('traffic');"><i class="icon-circle" style="color:<?php echo $_smarty_tpl->tpl_vars['colors']->value[0];?>
+				<input type="radio" name="options" onchange="selectDashgoalsChart('traffic');"/><i class="icon-circle" style="color:<?php echo $_smarty_tpl->tpl_vars['colors']->value[0];?>
 "></i> <?php echo smartyTranslate(array('s'=>'Traffic','mod'=>'dashgoals'),$_smarty_tpl);?>
 
 			</label>
 			<label class="btn btn-default">
-				<input type="radio" name="options" onchange="selectDashgoalsChart('conversion');"><i class="icon-circle" style="color:<?php echo $_smarty_tpl->tpl_vars['colors']->value[1];?>
+				<input type="radio" name="options" onchange="selectDashgoalsChart('conversion');"/><i class="icon-circle" style="color:<?php echo $_smarty_tpl->tpl_vars['colors']->value[1];?>
 "></i> <?php echo smartyTranslate(array('s'=>'Conversion','mod'=>'dashgoals'),$_smarty_tpl);?>
 
 			</label>
 			<label class="btn btn-default">
-				<input type="radio" name="options" onchange="selectDashgoalsChart('avg_cart_value');"><i class="icon-circle" style="color:<?php echo $_smarty_tpl->tpl_vars['colors']->value[2];?>
+				<input type="radio" name="options" onchange="selectDashgoalsChart('avg_cart_value');"/><i class="icon-circle" style="color:<?php echo $_smarty_tpl->tpl_vars['colors']->value[2];?>
 "></i> <?php echo smartyTranslate(array('s'=>'Average Cart Value','mod'=>'dashgoals'),$_smarty_tpl);?>
 
 			</label>
 			<label class="btn btn-default active">
-				<input type="radio" name="options" onchange="selectDashgoalsChart('sales');"><i class="icon-circle" style="color:<?php echo $_smarty_tpl->tpl_vars['colors']->value[3];?>
+				<input type="radio" name="options" onchange="selectDashgoalsChart('sales');"/><i class="icon-circle" style="color:<?php echo $_smarty_tpl->tpl_vars['colors']->value[3];?>
 "></i> <?php echo smartyTranslate(array('s'=>'Sales','mod'=>'dashgoals'),$_smarty_tpl);?>
 
 			</label>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2018-08-12 13:11:17
+<?php /* Smarty version Smarty-3.1.14, created on 2018-08-19 12:45:52
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\modules\prestashop\modules\dashgoals\views\templates\hook\config.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:303525b7015d56c64e2-94891572%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c41a0b36914c47d27e0e865bd81cb02f57ea7fb2' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC9\\modules\\prestashop\\modules\\dashgoals\\views\\templates\\hook\\config.tpl',
-      1 => 1395073066,
+      1 => 1534343831,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5b7015d58375d0_34335857',
   'variables' => 
   array (
     'link' => 0,
@@ -24,15 +26,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'currency' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5b7015d58375d0_34335857',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5b7015d58375d0_34335857')) {function content_5b7015d58375d0_34335857($_smarty_tpl) {?>
-
 <section id="dashgoals_config" class="dash_config hide">
 	<header><i class="icon-wrench"></i> <?php echo smartyTranslate(array('s'=>'Configuration','mod'=>'dashgoals'),$_smarty_tpl);?>
 </header>
-	<form class="defaultForm form-horizontal" method="post" action="<?php echo $_smarty_tpl->tpl_vars['link']->value->getAdminLink('AdminDashboard');?>
+	<form class="defaultForm form-horizontal" method="post" action="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getAdminLink('AdminDashboard'), ENT_QUOTES, 'UTF-8', true);?>
 ">
 		<table class="table table-condensed table-striped table-bordered">
 			<thead>
